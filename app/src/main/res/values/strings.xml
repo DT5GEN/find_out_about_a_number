@@ -2,4 +2,5 @@
     <string name="app_name">find out about a number</string>
     <string name="get_random_number_fact">get Random Number fact</string>
     <string name="get_fact">get fact</string>
+    <string name="input_a_number">input a number</string>
 </resources>
