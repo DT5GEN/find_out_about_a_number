@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.deeppowercrew.findoutaboutanumber.R
 
-class DetailsFragment:Fragment() {
+class DetailsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,7 +21,18 @@ class DetailsFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val value = arguments?.getString("details")
+        val value = requireArguments().getString(KEY)
         view.findViewById<TextView>(R.id.detailsTextView).text = value
+    }
+
+    companion object {
+
+        private const val KEY = "DETAILS"
+        fun newInstance(value: String) = DetailsFragment().apply {
+            arguments = Bundle().apply {
+                putString(KEY, value)
+            }
+        }
+
     }
 }
